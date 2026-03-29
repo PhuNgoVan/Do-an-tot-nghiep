@@ -1,0 +1,4 @@
+../Core/Src/Black_box/app_balckbox.c:24:17:APP_BB_CalcCRC	3
+../Core/Src/Black_box/app_balckbox.c:40:17:APP_BB_Init	6
+../Core/Src/Black_box/app_balckbox.c:88:17:APP_BB_Log	9
+../Core/Src/Black_box/app_balckbox.c:154:17:APP_BB_ReadRecord	23
