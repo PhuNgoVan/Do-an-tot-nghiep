@@ -1,5 +1,7 @@
 "./Core/Src/Black_box/W25Q128.o"
 "./Core/Src/Black_box/app_balckbox.o"
+"./Core/Src/GPS/app_gps.o"
+"./Core/Src/GPS/gps.o"
 "./Core/Src/MP_9250.o"
 "./Core/Src/main.o"
 "./Core/Src/mc7re.o"

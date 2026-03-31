@@ -1,4 +1,4 @@
 ../Core/Src/Black_box/app_balckbox.c:24:17:APP_BB_CalcCRC	24	static
-../Core/Src/Black_box/app_balckbox.c:40:17:APP_BB_Init	32	static
-../Core/Src/Black_box/app_balckbox.c:88:17:APP_BB_Log	208	static
-../Core/Src/Black_box/app_balckbox.c:154:17:APP_BB_ReadRecord	56	static
+../Core/Src/Black_box/app_balckbox.c:41:17:APP_BB_Init	32	static
+../Core/Src/Black_box/app_balckbox.c:89:17:APP_BB_Log	208	static
+../Core/Src/Black_box/app_balckbox.c:156:17:APP_BB_ReadRecord	56	static

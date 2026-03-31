@@ -17,8 +17,8 @@ extern SPI_HandleTypeDef 	hspi1;
 
 // Pin cs
 #define MPU_9250_SPI		hspi1
-#define MPU_BMP_CSB_PORT	GPIOA
-#define MPU_BMP_CSB_PIN		GPIO_PIN_3
+#define MPU_BMP_CSB_PORT	GPIOB
+#define MPU_BMP_CSB_PIN		GPIO_PIN_1
 #define MPU_9250_NCS_PORT	GPIOA
 #define MPU_NCS_PIN			GPIO_PIN_4
 #define MPU_W25_NCS_PORT	GPIOB

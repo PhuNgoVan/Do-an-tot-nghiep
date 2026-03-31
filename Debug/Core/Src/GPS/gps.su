@@ -1,0 +1,6 @@
+../Core/Src/GPS/gps.c:17:13:GPS_PushByte	24	static
+../Core/Src/GPS/gps.c:28:6:GPS_Init	4	static
+../Core/Src/GPS/gps.c:35:6:GPS_Start	8	static
+../Core/Src/GPS/gps.c:44:6:GPS_RxEventCallback	24	static
+../Core/Src/GPS/gps.c:57:10:GPS_Available	16	static
+../Core/Src/GPS/gps.c:73:9:GPS_ReadByte	24	static
