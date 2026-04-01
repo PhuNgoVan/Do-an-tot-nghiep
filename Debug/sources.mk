@@ -25,6 +25,7 @@ SUBDIRS := \
 Core/Src/Black_box \
 Core/Src/GPS \
 Core/Src \
+Core/Src/VL53L1X \
 Core/Startup \
 Drivers/STM32F4xx_HAL_Driver/Src \
 

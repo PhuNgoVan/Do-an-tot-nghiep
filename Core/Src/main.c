@@ -26,6 +26,9 @@
 #include "MPU_9250.h"
 #include "Black_box/app_blackbox.h"
 #include "GPS/app_gps.h"
+//#include "VL53/app_vl53.h"
+#include "VL53L1X/VL53L1X.h"
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,6 +60,8 @@ volatile uint32_t next_addr = 0;
 uint8_t ch[144];
 
 GPS_Data_t gps;
+
+uint16_t d1;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -165,6 +170,17 @@ int main(void)
 
   GPS_App_Init();
 
+  TOF_SetLogFunction(printf);
+
+  VL53L1X sensor1;
+  TOF_InitStruct(&sensor1, &hi2c1, 0x32, NULL, 0);
+
+  VL53L1X* sensors[] = {&sensor1};
+  int status = TOF_BootMultipleSensors(sensors, sizeof(sensors) / sizeof(*sensors));
+  if (status)
+  {
+	  printf("One or more sensors don't work\r\n");
+  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -176,6 +192,11 @@ int main(void)
       GPS_App_Task();
 
       GPS_App_GetLatest(&gps);
+
+      d1 = TOF_GetDistance(&sensor1);
+
+      printf("D1: %u\n", d1);
+      HAL_Delay(20);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
