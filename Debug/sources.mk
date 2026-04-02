@@ -24,8 +24,9 @@ C_DEPS :=
 SUBDIRS := \
 Core/Src/Black_box \
 Core/Src/GPS \
-Core/Src \
+Core/Src/MPU9250 \
 Core/Src/VL53L1X \
+Core/Src \
 Core/Startup \
 Drivers/STM32F4xx_HAL_Driver/Src \
 

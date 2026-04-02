@@ -1,0 +1,10 @@
+../Core/Src/MPU9250/app_mpu.c:59:9:MPU_begin	32	static
+../Core/Src/MPU9250/app_mpu.c:94:6:MPU_REG_WRITE	24	static
+../Core/Src/MPU9250/app_mpu.c:108:6:MPU_REG_READ	32	static
+../Core/Src/MPU9250/app_mpu.c:120:6:MPU_CS	16	static
+../Core/Src/MPU9250/app_mpu.c:129:6:MPU_writeAccFullScaleRange	32	static
+../Core/Src/MPU9250/app_mpu.c:170:6:MPU_writeGyroFullScaleRange	32	static
+../Core/Src/MPU9250/app_mpu.c:210:6:MPU_readRawData	40	static
+../Core/Src/MPU9250/app_mpu.c:232:6:MPU_calibrateGyro	40	static
+../Core/Src/MPU9250/app_mpu.c:264:6:MPU_readProcessedData	16	static
+../Core/Src/MPU9250/app_mpu.c:288:6:MPU_calcAttitude	32	static

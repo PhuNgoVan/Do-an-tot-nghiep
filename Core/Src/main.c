@@ -23,7 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include "string.h"
 #include "mc7re.h"
-#include "MPU_9250.h"
+#include "MPU9250/app_mpu.h"
 #include "Black_box/app_blackbox.h"
 #include "GPS/app_gps.h"
 //#include "VL53/app_vl53.h"
@@ -62,6 +62,10 @@ uint8_t ch[144];
 GPS_Data_t gps;
 
 uint16_t d1;
+
+MPU9250_t MPU9250;
+
+//MPU9250_Info_t mpu_info;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -181,6 +185,22 @@ int main(void)
   {
 	  printf("One or more sensors don't work\r\n");
   }
+
+  /* nhả hết CS các con khác */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);   // MPU NCS
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);   // BMP CSB
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);   // W25 CS
+
+  MPU9250.settings.gFullScaleRange = GFSR_500DPS;
+  MPU9250.settings.aFullScaleRange = AFSR_4G;
+  MPU9250.settings.CS_PIN = GPIO_PIN_4;
+  MPU9250.settings.CS_PORT = GPIOA;
+  MPU9250.attitude.tau = 0.98;
+  MPU9250.attitude.dt = 0.004;
+
+  HAL_Delay(100);
+
+//  MPU9250_App_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -195,8 +215,16 @@ int main(void)
 
       d1 = TOF_GetDistance(&sensor1);
 
-      printf("D1: %u\n", d1);
-      HAL_Delay(20);
+//      MPU9250_App_ReadWhoAmI(&mpu_info);
+
+      if (MPU_begin(&hspi1, &MPU9250) != 1)
+      {
+      HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+      HAL_Delay(1000);
+      }
+
+      MPU_calibrateGyro(&hspi1, &MPU9250, 1500);
+//      HAL_Delay(20);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

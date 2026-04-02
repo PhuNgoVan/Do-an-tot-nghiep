@@ -1,4 +1,5 @@
-Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
+Core/Src/MPU9250/app_mpu.o: ../Core/Src/MPU9250/app_mpu.c \
+ ../Core/Inc/MPU9250/app_mpu.h ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -27,11 +28,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Inc/mc7re.h ../Core/Inc/MPU9250/app_mpu.h \
- ../Core/Inc/Black_box/app_blackbox.h ../Core/Inc/Black_box/w25q128.h \
- ../Core/Inc/GPS/app_gps.h ../Core/Inc/GPS/gps.h \
- ../Core/Inc/VL53L1X/VL53L1X.h
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+../Core/Inc/MPU9250/app_mpu.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -62,10 +60,3 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-../Core/Inc/mc7re.h:
-../Core/Inc/MPU9250/app_mpu.h:
-../Core/Inc/Black_box/app_blackbox.h:
-../Core/Inc/Black_box/w25q128.h:
-../Core/Inc/GPS/app_gps.h:
-../Core/Inc/GPS/gps.h:
-../Core/Inc/VL53L1X/VL53L1X.h:
