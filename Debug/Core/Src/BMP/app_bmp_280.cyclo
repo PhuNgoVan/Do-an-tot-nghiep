@@ -1,0 +1,2 @@
+../Core/Src/BMP/app_bmp_280.c:20:6:BMP280_AppInit	1
+../Core/Src/BMP/app_bmp_280.c:30:9:BMP280_AppGetValue	3

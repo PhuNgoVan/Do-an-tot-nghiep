@@ -22,11 +22,11 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "string.h"
-#include "mc7re.h"
+#include "receive/mc7re.h"
 #include "MPU9250/app_mpu.h"
 #include "Black_box/app_blackbox.h"
 #include "GPS/app_gps.h"
-//#include "VL53/app_vl53.h"
+#include "BMP/app_bmp_280.h"
 #include "VL53L1X/VL53L1X.h"
 #include "stdio.h"
 /* USER CODE END Includes */
@@ -43,6 +43,8 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+mc7re_channels test_rx;
+
 APP_BB_Handle_t bb;
 
 uint8_t tx_data[8] = {1,2,3,4,5,6,7,8};
@@ -64,6 +66,8 @@ GPS_Data_t gps;
 uint16_t d1;
 
 MPU9250_t MPU9250;
+
+BMP280_AppData_t bmp_data;
 
 //MPU9250_Info_t mpu_info;
 /* USER CODE END PM */
@@ -198,6 +202,8 @@ int main(void)
   MPU9250.attitude.tau = 0.98;
   MPU9250.attitude.dt = 0.004;
 
+  BMP280_AppInit();
+
   HAL_Delay(100);
 
 //  MPU9250_App_Init();
@@ -209,6 +215,15 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+	  test_rx.CH1 = MC7RE_Get_valid(1);
+	  test_rx.CH2 = MC7RE_Get_valid(2);
+	  test_rx.CH3 = MC7RE_Get_valid(3);
+	  test_rx.CH4 = MC7RE_Get_valid(4);
+	  test_rx.CH5 = MC7RE_Get_valid(5);
+	  test_rx.CH6 = MC7RE_Get_valid(6);
+	  test_rx.CH7 = MC7RE_Get_valid(7);
+	  test_rx.CH8 = MC7RE_Get_valid(8);
+
       GPS_App_Task();
 
       GPS_App_GetLatest(&gps);
@@ -223,8 +238,10 @@ int main(void)
       HAL_Delay(1000);
       }
 
-      MPU_calibrateGyro(&hspi1, &MPU9250, 1500);
-//      HAL_Delay(20);
+      MPU_calibrateGyro(&hspi1, &MPU9250, 15);
+
+      BMP280_AppGetValue(&bmp_data);
+      HAL_Delay(20);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

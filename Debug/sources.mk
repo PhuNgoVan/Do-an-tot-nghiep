@@ -22,11 +22,13 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+Core/Src/BMP \
 Core/Src/Black_box \
 Core/Src/GPS \
 Core/Src/MPU9250 \
 Core/Src/VL53L1X \
 Core/Src \
+Core/Src/receive \
 Core/Startup \
 Drivers/STM32F4xx_HAL_Driver/Src \
 

@@ -9,11 +9,11 @@
 #define SRC_MC7RE_C_
 
 #include "main.h"
-#include "mc7re.h"
+#include "receive/mc7re.h"
 
 static mc7re_channels 	mc7re;
 
-static unsigned char 	buffer[100];
+static uint8_t 			buffer[100];
 static uint8_t 			sbus_idx = 0;
 static uint8_t 			rx_byte;
 
@@ -60,7 +60,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 
 unsigned short MC7RE_Get_valid(unsigned char ch)
 {
-	HAL_UART_Receive_IT(&MC7RE_UART, &buffer, 1);
+	HAL_UART_Receive_IT(&MC7RE_UART, buffer, 1);
     switch (ch)
     {
         case 1: return mc7re.CH1;
