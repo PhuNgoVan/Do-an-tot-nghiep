@@ -15,6 +15,7 @@ RM := rm -rf
 -include Core/Src/VL53L1X/subdir.mk
 -include Core/Src/MPU9250/subdir.mk
 -include Core/Src/GPS/subdir.mk
+-include Core/Src/ESC/subdir.mk
 -include Core/Src/Black_box/subdir.mk
 -include Core/Src/BMP/subdir.mk
 -include Core/Src/subdir.mk

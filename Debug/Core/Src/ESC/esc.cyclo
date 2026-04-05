@@ -1,0 +1,4 @@
+../Core/Src/ESC/esc.c:11:6:ESC_Start	1
+../Core/Src/ESC/esc.c:19:6:ESC_SetUs	9
+../Core/Src/ESC/esc.c:39:6:ESC_SetAll	1
+../Core/Src/ESC/esc.c:44:6:ESC_Arm	1

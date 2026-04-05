@@ -24,6 +24,7 @@ C_DEPS :=
 SUBDIRS := \
 Core/Src/BMP \
 Core/Src/Black_box \
+Core/Src/ESC \
 Core/Src/GPS \
 Core/Src/MPU9250 \
 Core/Src/VL53L1X \

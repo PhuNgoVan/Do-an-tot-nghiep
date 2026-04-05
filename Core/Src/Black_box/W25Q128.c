@@ -208,7 +208,7 @@ W25_Status_t W25_ChipErase(void)
 		}
     }
 	W25_CS_High();
-	ret = W25_WaitBusy(120000);
+	ret = W25_WaitBusy(12000);
     return ret;
 }
 

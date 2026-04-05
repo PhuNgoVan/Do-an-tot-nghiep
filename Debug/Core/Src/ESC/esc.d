@@ -1,6 +1,5 @@
-Core/Src/GPS/app_gps.o: ../Core/Src/GPS/app_gps.c \
- ../Core/Inc/GPS/app_gps.h ../Core/Inc/GPS/gps.h ../Core/Inc/main.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+Core/Src/ESC/esc.o: ../Core/Src/ESC/esc.c ../Core/Inc/ESC/esc.h \
+ ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -31,8 +30,7 @@ Core/Src/GPS/app_gps.o: ../Core/Src/GPS/app_gps.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-../Core/Inc/GPS/app_gps.h:
-../Core/Inc/GPS/gps.h:
+../Core/Inc/ESC/esc.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:

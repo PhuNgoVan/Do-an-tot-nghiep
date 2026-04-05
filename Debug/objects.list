@@ -2,6 +2,7 @@
 "./Core/Src/BMP/app_bmp_280.o"
 "./Core/Src/Black_box/W25Q128.o"
 "./Core/Src/Black_box/app_balckbox.o"
+"./Core/Src/ESC/esc.o"
 "./Core/Src/GPS/app_gps.o"
 "./Core/Src/GPS/gps.o"
 "./Core/Src/MPU9250/app_mpu.o"
