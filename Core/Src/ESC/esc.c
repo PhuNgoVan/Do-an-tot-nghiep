@@ -44,6 +44,6 @@ void ESC_SetAll(uint16_t throttle_us)
 void ESC_Arm(void)
 {
     ESC_SetAll(1000);
-    HAL_Delay(3000);
+    HAL_Delay(4000);
 }
 

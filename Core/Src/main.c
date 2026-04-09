@@ -70,6 +70,8 @@ MPU9250_t MPU9250;
 
 BMP280_AppData_t bmp_data;
 
+double esc_speed = 1000;
+
 //MPU9250_Info_t mpu_info;
 /* USER CODE END PM */
 
@@ -213,6 +215,18 @@ int main(void)
 
   HAL_Delay(100);
 
+  ESC_Start();
+
+//  ESC_SetAll(2000);
+//
+//  HAL_Delay(3000);   // chờ ESC nhận max
+
+  ESC_SetAll(1000);
+
+  HAL_Delay(3000);   // chờ calibrate
+
+  ESC_Arm();
+
 //  MPU9250_App_Init();
   /* USER CODE END 2 */
 
@@ -222,6 +236,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+	  ESC_SetAll((unsigned int) esc_speed);
+
 	  test_rx.CH1 = MC7RE_Get_valid(1);
 	  test_rx.CH2 = MC7RE_Get_valid(2);
 	  test_rx.CH3 = MC7RE_Get_valid(3);
@@ -231,6 +247,7 @@ int main(void)
 	  test_rx.CH7 = MC7RE_Get_valid(7);
 	  test_rx.CH8 = MC7RE_Get_valid(8);
 
+	  esc_speed = (1 - (float)((test_rx.CH3 - 400)) / 1600) * 1000 + 1000;
       GPS_App_Task();
 
       GPS_App_GetLatest(&gps);
@@ -395,7 +412,7 @@ static void MX_TIM1_Init(void)
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 84-1;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 2000-1;
+  htim1.Init.Period = 20000-1;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
